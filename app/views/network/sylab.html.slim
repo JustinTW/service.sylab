@@ -10,7 +10,7 @@ hr
     | SYLab 虛擬 IP 可用範圍為
     code 192.168.67.50
     | ~
-    code 192.168.67.200
+    code 192.168.67.150
     | ，<br>提供實驗室設備與電腦上網使用，
     | 網設定方式如下：<br>
     dl class="dl-horizontal"
@@ -20,6 +20,8 @@ hr
       dd 255.255.255.0
       dt 預設閘道:
       dd 192.168.67.254
+      dt ----------------
+      dd -----------------------
       dt 主要 DNS:
       dd 192.168.67.254
       dt 次要 DNS:
@@ -30,7 +32,10 @@ h2: i class="icon-hand-right"
 hr
 
 ul id="filter" class="nav nav-tabs"
-  li class="active": a href="#all" data-toggle="tab" 顯示全部 IP
-  li: a href="#offline" data-toggle="tab" 離線
-  li: a href="#online" data-toggle="tab" 目前在線
+  li class="active": a href="#pc-offline" data-toggle="tab" 無人使用的 IP
+  li: a href="#pc-online" data-toggle="tab" 目前在線
+  li: a href="#service" data-toggle="tab" 伺服器
+  li: a href="#vpn" data-toggle="tab" VPN IP
+  li: a href="#all" data-toggle="tab" 顯示全部 IP
+
 #ip_list
