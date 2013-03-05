@@ -1,0 +1,76 @@
+DOCTYPE html
+html
+  head
+    title SYLab Net Service
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = yield(:head)
+    = csrf_meta_tags
+
+  body
+    .container
+      .row
+        .span12
+          h1 SYLab Net Service
+      .navbar
+        .navbar-inner
+          ul class="nav"
+            li id="help" class="dropdown"
+               a data-toggle="dropdown" class="dropdown-toggle" href="#"
+                i class="icon-cogs"
+                | 實驗室電腦設定說明
+               ul class="dropdown-menu"
+                li: a href="/help/network"
+                  i class="icon-globe"
+                  | 網路設定
+                li: a href="/help/printer"
+                  i class="icon-print"
+                  | 印表機設定
+            li id="network" class="dropdown"
+              a data-toggle="dropdown" class="dropdown-toggle" href="#"
+                i class="icon-globe"
+                | IP查詢
+              ul class="dropdown-menu"
+                li: a href="/network/sylab"
+                  i class="icon-building"
+                  | SYLAB 虛擬IP (192.168.67.XX)
+                li: a href="/network/ee"
+                  i class="icon-globe"
+                  | NTUEE 公共IP (140.112.42.XX)
+            li id="account" class="dropdown"
+              a data-toggle="dropdown" class="dropdown-toggle" href="#"
+                i class="icon-user"
+                | SYLab 帳號
+              ul class="dropdown-menu"
+                li: a href="/account/apply"
+                  i class="icon-pencil"
+                  | 申請帳號
+                li: a href="/account/profile"
+                  i class="icon-user"
+                  | 查看狀態
+            li id="resource"
+              a href="/resource/index"
+                i class="icon-list-alt"
+                | 實驗室資源列表
+            li
+              a href="http://lion.ee.ntu.edu.tw/"
+                i class="icon-comments-alt"
+                | 實驗室網站
+            li
+              a href="/"
+                i class="icon-home"
+                | 首頁
+
+      - if notice
+        div class="alert alert-success"
+          = notice
+      - if alert
+        div class="alert alert-error"
+          = alert
+
+      == yield
+    footer class="footer"
+      .container
+      p
+        |SYLab 網路服務資訊站
+        a href="http://service.sylab.ee.ntu.edu.tw/" service.sylab.ee.ntu.edu.tw
