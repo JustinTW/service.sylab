@@ -1,41 +1,42 @@
 = stylesheet 'network.css'
 = javascript 'network.js'
 = javascript 'network.sylab.js'
-
-h2: i class="icon-hand-right"
-  | SYLab 虛擬 IP 設定說明
-hr
 .row
-  div class="span9 offset3"
-    | SYLab 虛擬 IP 可用範圍為
-    code 192.168.67.50
-    | ~
-    code 192.168.67.150
-    | ，<br>提供實驗室設備與電腦上網使用，
-    | 網設定方式如下：<br>
-    dl class="dl-horizontal"
-      dt IP:
-      dd 192.168.67.XX
-      dt 子遮罩:
-      dd 255.255.255.0
-      dt 預設閘道:
-      dd 192.168.67.254
-      dt ----------------
-      dd -----------------------
-      dt 主要 DNS:
-      dd 192.168.67.254
-      dt 次要 DNS:
-      dd 8.8.8.8
+  .span12
+    h2: i class="icon-hand-right"
+      | SYLab 虛擬 IP 設定說明
+    hr
+    .row
+      div class="span9 offset3"
+        | SYLab 虛擬 IP 可用範圍為
+        code 192.168.67.50
+        | ~
+        code 192.168.67.150
+        | ，<br>提供實驗室設備與電腦上網使用，
+        | 網設定方式如下：<br>
+        dl class="dl-horizontal"
+          dt IP:
+          dd 192.168.67.XX
+          dt 子遮罩:
+          dd 255.255.255.0
+          dt 預設閘道:
+          dd 192.168.67.254
+          dt ----------------
+          dd -----------------------
+          dt 主要 DNS:
+          dd 192.168.67.254
+          dt 次要 DNS:
+          dd 8.8.8.8
 
-h2: i class="icon-hand-right"
-  | SYLab 虛擬 IP 列表
-hr
+    h2: i class="icon-hand-right"
+      | SYLab 虛擬 IP 列表
+    hr
 
-ul id="filter" class="nav nav-tabs"
-  li class="active": a href="#pc-offline" data-toggle="tab" 無人使用的 IP
-  li: a href="#pc-online" data-toggle="tab" 目前在線
-  li: a href="#service" data-toggle="tab" 伺服器
-  li: a href="#vpn" data-toggle="tab" VPN IP
-  li: a href="#all" data-toggle="tab" 顯示全部 IP
+    ul id="filter" class="nav nav-tabs"
+      li class="active": a href="#pc-offline" data-toggle="tab" 無人使用的 IP
+      li: a href="#pc-online" data-toggle="tab" 目前在線
+      li: a href="#service" data-toggle="tab" 伺服器
+      li: a href="#vpn" data-toggle="tab" VPN IP
+      li: a href="#all" data-toggle="tab" 顯示全部 IP
 
-#ip_list
+    #ip_list

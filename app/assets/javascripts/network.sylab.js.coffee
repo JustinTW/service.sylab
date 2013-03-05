@@ -8,7 +8,7 @@ $ ->
   # Prepare ip list
   for i in [1..254] by 1
     ip = '192.168.67.' + i
-    if i < 25
+    if i < 30
       item = [ i, ip, 'loading', 'loading', 'loading', 'loading','--', '--', '--', '--']
     else
       item = [ i, ip, 'loading', 'loading', 'loading', 'loading',

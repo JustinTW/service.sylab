@@ -46,32 +46,32 @@ $ ->
       ]
       [
         5,
-        '<i class="icon-desktop icon-2x"></i> Windows XP',
-        'Address: <code>winxp.sylab.ee.ntu.edu.tw</code><br>
+        '<i class="icon-th-large icon-2x"></i> RDP Win XP',
+        'Address: <code>winxp.sylab.ee.ntu.edu.tw</code> Port:<code>3330</code><br>
         <a target="_blank" class="btn btn-primary btn-mini" href="/xen/request"><i class="icon-download-alt icon-white"></i> 下載連線設定檔</a>',
         'SYLab 帳號',
         'offline',
-        '建置中..',
+        '公用遠端桌面 Windows XP <br>建置中..',
         'host'
       ]
       [
         6,
-        '<i class="icon-desktop icon-2x"></i> Windows 7',
-        'Address: <code>win7.sylab.ee.ntu.edu.tw</code><br>
+        '<i class="icon-th-large icon-2x"></i> RDP Win 7',
+        'Address: <code>win7.sylab.ee.ntu.edu.tw</code> Port:<code>3331</code><br>
         <a target="_blank" class="btn btn-primary btn-mini" href="/xen/request"><i class="icon-download-alt icon-white"></i> 下載連線設定檔</a>',
         'SYLab 帳號',
         'offline',
-        '建置中..',
+        '公用遠端桌面 Windows 7 <br>建置中..',
         'host'
       ]
       [
         7,
-        '<i class="icon-desktop icon-2x"></i> Windows 8',
-        'Address: <code>win8.sylab.ee.ntu.edu.tw</code><br>
+        '<i class="icon-th-large icon-2x"></i> RDP Win 8',
+        'Address: <code>win8.sylab.ee.ntu.edu.tw</code> Port:<code>3332</code><br>
         <a target="_blank" class="btn btn-primary btn-mini" href="/xen/request"><i class="icon-download-alt icon-white"></i> 下載連線設定檔</a>',
         'SYLab 帳號',
         'offline',
-        '建置中..',
+        '公用遠端桌面 Windows 8 <br>建置中..',
         'host'
       ]
       [
