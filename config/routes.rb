@@ -1,4 +1,8 @@
 ServiceSylab::Application.routes.draw do
+  get "network/sylab"
+
+  get "resource/index"
+
   get "home/index"
 
   # The priority is based upon order of creation:
