@@ -1,10 +1,10 @@
-# service.sylab.ee.ntu.edu.tw
+# Service List for SYLab
 
 SYLab Net Service Infomation Site
 
 Daily Snapshots Demo  http://service.sylab.ee.ntu.edu.tw
 
-## Setup develop enviroment
+## Setting up development environment
 
 ### Setup RVM
 Please reference the link
