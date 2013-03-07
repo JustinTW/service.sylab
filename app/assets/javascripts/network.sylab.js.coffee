@@ -23,8 +23,10 @@ $ ->
         return '<span class="label label-success">上線</span>'
       else if val == "offline"
         return '<span class="label label-error">離線</span>'
-      else
+      else if val == "loading"
         return '<i  class="icon-refresh icon-spin"></i>'
+      else
+        return val
   cRenderResult = new cRenderResult
 
   # Setting for datatables
@@ -78,10 +80,20 @@ $ ->
   oTable = $('#ip_table').dataTable aaSettings
 
   # Query Status from nmap api
-  #for j in [0..253] by 1
-    #setTimeout ()->
-    #oTable.fnUpdate "offline", j, 5
-    #, 3000
+  for j in [0..254] by 1
+    do (j) ->
+      setTimeout (()->
+        ip = '192.168.67.' + (j+1)
+        setTimeout ()->
+          $.getJSON 'http://service.sylab.ee.ntu.edu.tw/network/scan/'+ip,(data)->
+            row = data.ip.split('.')
+            oTable.fnUpdate data.hostname, row[3]-1, 2
+            oTable.fnUpdate data.mac, row[3]-1, 3
+            oTable.fnUpdate data.ping, row[3]-1, 4
+            oTable.fnUpdate data.status, row[3]-1, 5
+      ), j*4500
+
+  #oTable.fnUpdate "offline", j, 5
 
   $('#network').addClass 'active'
 

@@ -64,6 +64,12 @@ cd ~/workspace/service.sylab.git
 bundle install
 ```
 
+### Install Nmap if you need to use scan ip function
+
+```bash
+sudo apt-get install nmap -y
+```
+
 ### Start Rails
 
 ```bash

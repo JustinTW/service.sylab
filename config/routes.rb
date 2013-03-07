@@ -1,9 +1,15 @@
 ServiceSylab::Application.routes.draw do
   get "network/sylab"
 
+  get "network/scan"
+
   get "resource/index"
 
   get "home/index"
+
+  get "network/scan/:ip" => 'network#scan', :constraints => { :ip => /[^\/]+/ }
+
+  #match 'network/scan/:ip' => 'network#scan'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
