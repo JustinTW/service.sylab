@@ -4,6 +4,14 @@ SYLab Net Service Infomation Site
 
 Daily Snapshots Demo  http://service.sylab.ee.ntu.edu.tw
 
+[![Build Status](https://travis-ci.org/JustinTW/service.sylab.png?branch=master)](https://travis-ci.org/JustinTW/service.sylab)
+
+## To Do List
+
+This project is under development, welcome to fork project and send pull request.
+
+[Trello For This Project](https://trello.com/b/9mJU671E)
+
 ## Setting up development environment
 
 ### Setup RVM
@@ -17,7 +25,7 @@ http://www.andrehonsberg.com/article/install-rvm-ubuntu-1204-linux-for-ruby-193
 vi ~/.bashrc
 ```
 
-add following line below
+add following line
 
 ```bash
 # rvm and ruby-gems commands
@@ -41,9 +49,9 @@ source ~.bashrc
 cd ~/ && mkdir workspace && cd workspace
 git clone git@github.com:JustinTW/service.sylab.git
 ```
-`if you want to contribute code, you must fork project before this step.`
+`if you want to contribute code, you must fork project before this step, and clone from your github repos`
 
-### Add gemset for this project
+### Add RVM gemset for this project
 
 ```bash
 rgc service.sylab
@@ -62,6 +70,4 @@ bundle install
 rails s
 ```
 
-For now, you can access this project on http://{ip}:3000
-
-
+For now, you can access this project on http://{your_develop_env_ip}:3000
