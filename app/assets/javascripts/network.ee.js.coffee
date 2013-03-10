@@ -7,12 +7,8 @@ $ ->
 
   # Prepare ip list
   for i in [1..254] by 1
-    ip = '192.168.67.' + i
-    if i < 30
-      item = [ i, ip, '-', '-', '-', 'loading','--', '--', '--', '--']
-    else
-      item = [ i, ip, '-', '-', '-', 'loading',
-              dn+':33'+i, dn+':22'+i, dn+':20'+i, dn+':21'+i ]
+    ip = '140.112.42.' + i
+    item = [ i, ip, '-', '-', '-', 'loading']
 
     aaIps.push item
 
@@ -65,10 +61,6 @@ $ ->
           fnRender: (o, val)->
             cRenderResult.print val
         }
-        {bSortable: false, sClass: "center", sTitle: "校外連入遠端桌面"}
-        {bSortable: false, sClass: "center", sTitle: "校外連入SSH"}
-        {bSortable: false, sClass: "center", sTitle: "校外連入網站"}
-        {bSortable: false, sClass: "center", sTitle: "校外連入FTP"}
       ]
     aaData: aaIps
     sDom: "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>"
@@ -84,7 +76,7 @@ $ ->
 
   #Query Status from nmap api
 
-  ip = '192.168.67.0'
+  ip = '140.112.42.0'
   $.getJSON 'http://service.sylab.ee.ntu.edu.tw/network/scan/'+ip
     ,(data)->
       key = []
@@ -112,13 +104,11 @@ $ ->
     hash = 'all'
 
   if hash == 'pc-offline'
-    oTable.fnFilter '離線 sylab'
+    oTable.fnFilter '離線'
   else if hash == 'pc-online'
-    oTable.fnFilter '上線 sylab'
+    oTable.fnFilter '上線'
   else if hash == 'service'
     oTable.fnFilter '--'
-  else if hash == 'vpn'
-    oTable.fnFilter 'LabVPN'
   else if hash == 'all'
     oTable.fnFilter ''
 
@@ -134,21 +124,13 @@ $ ->
   $('#filter a[href="#pc-offline"]').click (e)->
       #e.preventDefault
       $(this).tab 'show'
-      oTable.fnFilter '離線 sylab'
+      oTable.fnFilter '離線'
 
   $('#filter a[href="#pc-online"]').click (e)->
       #e.preventDefault
       $(this).tab 'show'
-      oTable.fnFilter '上線 sylab'
+      oTable.fnFilter '上線'
 
-  $('#filter a[href="#service"]').click (e)->
-      #e.preventDefault
-      $(this).tab 'show'
-      oTable.fnFilter '--'
 
-  $('#filter a[href="#vpn"]').click (e)->
-      #e.preventDefault
-      $(this).tab 'show'
-      oTable.fnFilter 'LabVPN'
 
   # new FixedHeader oTable

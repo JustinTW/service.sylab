@@ -1,6 +1,6 @@
 = stylesheet 'network.css'
 = javascript 'network.js'
-= javascript 'network.sylab.js'
+= javascript 'network.dns.js'
 .row
   .span12
     h2: i class="icon-hand-right"
@@ -29,19 +29,15 @@
           dd 8.8.8.8
 
     h2: i class="icon-hand-right"
-      | SYLab 虛擬 IP 列表
+      | SYLab LabPC
     hr
 
-    ul id="filter" class="nav nav-tabs"
-      li class="active": a href="#all" data-toggle="tab" 顯示全部 IP
-      li: a href="#pc-offline" data-toggle="tab" 無人使用的 IP
-      li: a href="#pc-online" data-toggle="tab" 目前在線
-      li: a href="#service" data-toggle="tab" 伺服器
-      li: a href="#vpn" data-toggle="tab" VPN IP
+    - (50..149).each do |x|
+        #{x}.67.168.192.in-addr.arpa.  IN  PTR LabPC#{sprintf( "%03d",x)}.sylab.ee.ntu.edu.tw.
 
-    #loading class="alert alert-success"
-      i class="icon-spinner icon-spin"
-      | ...載入中...
-      | 此區域為即時掃瞄資料，過程大約需要 10 秒...<br>
+    h2: i class="icon-hand-right"
+      | SYLab VPN
+    hr
+    - (150..180).each do |x|
+        #{x}.67.168.192.in-addr.arpa.  IN  PTR LabVPN#{sprintf( "%03d",x)}.sylab.ee.ntu.edu.tw.
 
-    #ip_list

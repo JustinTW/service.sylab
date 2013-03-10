@@ -1,13 +1,15 @@
 ServiceSylab::Application.routes.draw do
   get "network/sylab"
 
-  get "network/scan"
+  get "network/ee"
+
+  get "network/scan/:ip" => 'network#scan', :constraints => { :ip => /[^\/]+/ }
 
   get "resource/index"
 
   get "home/index"
 
-  get "network/scan/:ip" => 'network#scan', :constraints => { :ip => /[^\/]+/ }
+  get "network/dns"
 
   #match 'network/scan/:ip' => 'network#scan'
 
