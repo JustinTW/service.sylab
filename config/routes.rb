@@ -9,7 +9,7 @@ ServiceSylab::Application.routes.draw do
 
   get "home/index"
 
-  get "network/dns"
+  get "network/snipet"
 
   #match 'network/scan/:ip' => 'network#scan'
 

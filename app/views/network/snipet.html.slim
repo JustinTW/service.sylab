@@ -1,0 +1,52 @@
+= stylesheet 'network.css'
+= javascript 'network.js'
+= javascript 'network.snipet.js'
+.row
+  .span12
+    h2: i class="icon-hand-right"
+      | SYLab Settings Snipet
+    hr
+
+    ul id="filter" class="nav nav-tabs"
+      li class="active": a href="#dns-rev" data-toggle="tab" NAT IP 正解產生器
+      li: a href="#dns-hosts" data-toggle="tab" NAT IP 反解產生器
+      li: a href="#iptable" data-toggle="tab" Port Forwarding Iptable Snipet
+      li: a href="#vpn" data-toggle="tab" PPTPD VPN Allocate IP
+
+    div class="tab-content"
+      #dns-rev class="tab-pane active"
+        pre
+          - (30..49).each do |x|
+            | sy67#{sprintf("%03d",x)}.sylab.ee.ntu.edu.tw.  IN  A 192.168.67.#{x}<br>
+          - (50..179).each do |x|
+            | LabPC#{sprintf("%03d",x)}.sylab.ee.ntu.edu.tw.  IN  A 192.168.67.#{x}<br>
+          - (180..210).each do |x|
+            | LabVPN#{sprintf("%03d",x)}.sylab.ee.ntu.edu.tw.  IN  A 192.168.67.#{x}<br>
+
+      #dns-hosts class="tab-pane"
+        pre
+          - (30..49).each do |x|
+            | #{x}.67.168.192.in-addr.arpa.  IN  PTR sy67#{sprintf("%03d",x)}.sylab.ee.ntu.edu.tw.<br>
+          - (50..179).each do |x|
+            | #{x}.67.168.192.in-addr.arpa.  IN  PTR LabPC#{sprintf("%03d",x)}.sylab.ee.ntu.edu.tw.<br>
+          - (180..209).each do |x|
+            | #{x}.67.168.192.in-addr.arpa.  IN  PTR LabVPN#{sprintf("%03d",x)}.sylab.ee.ntu.edu.tw.<br>
+
+      #iptable class="tab-pane"
+        pre
+          - (30..210).each do |x|
+            | -A PREROUTING -p tcp -m tcp -d 140.112.42.92 --dport 20#{x} -j DNAT --to-destination 192.168.67.#{x}:80<br>
+
+          - (30..210).each do |x|
+            | -A PREROUTING -p tcp -m tcp -d 140.112.42.92 --dport 21#{x} -j DNAT --to-destination 192.168.67.#{x}:21<br>
+
+          - (30..210).each do |x|
+            | -A PREROUTING -p tcp -m tcp -d 140.112.42.92 --dport 22#{x} -j DNAT --to-destination 192.168.67.#{x}:22<br>
+
+          - (30..210).each do |x|
+            | -A PREROUTING -p tcp -m tcp -d 140.112.42.92 --dport 33#{x} -j DNAT --to-destination 192.168.67.#{x}:3389<br>
+
+      #vpn class="tab-pane"
+        pre
+          - (180..209).each do |x|
+            | 192.168.67.#{x}<br>

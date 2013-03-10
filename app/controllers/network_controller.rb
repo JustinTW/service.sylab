@@ -144,7 +144,7 @@ class NetworkController < ApplicationController
   end
 
 
-  def dns
+  def snipet
   end
 
   def ee
